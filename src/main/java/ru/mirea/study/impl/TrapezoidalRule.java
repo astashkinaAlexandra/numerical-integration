@@ -6,7 +6,16 @@ public class TrapezoidalRule implements Method {
 
     @Override
     public double calculate(int n) {
-        double delta = (b - a) / ((double) n);
+        double delta = 0.0;
+        try {
+            if (n != 0) {
+                delta = (b - a) / ((double) n);
+            } else {
+                delta = (b - a) / n;
+            }
+        } catch (ArithmeticException e) {
+            System.out.println("Divisor is 0. Division by 0 not possible");
+        }
         double sumTrap = 0;
         double x1, x2;
         for (int i = 0; i < n; i++) {
