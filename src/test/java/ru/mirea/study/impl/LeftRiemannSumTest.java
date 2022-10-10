@@ -1,4 +1,4 @@
-package impl;
+package ru.mirea.study.impl;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

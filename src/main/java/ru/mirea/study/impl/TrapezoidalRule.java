@@ -6,6 +6,14 @@ public class TrapezoidalRule implements Method {
 
     @Override
     public double calculate(int n) {
-        return 0;
+        double delta = (b - a) / ((double) n);
+        double sumTrap = 0;
+        double x1, x2;
+        for (int i = 0; i < n; i++) {
+            x1 = a + i * delta;
+            x2 = a + (i + 1) * delta;
+            sumTrap = sumTrap + (delta / 2) * (function(x1) + function(x2));
+        }
+        return sumTrap;
     }
 }
